@@ -1,0 +1,48 @@
+
+#form_main_container
+{
+	padding:15px 15px;
+	margin: 90px auto 0 14%;
+	background: rgba(255, 255, 255, 0.74);
+	width: 65%;
+	text-align: center;
+}
+.dashboard table{
+margin:60px auto auto;
+ 	
+}
+.dashboard thead {
+ background:#f1f1f1;
+}
+.member-dashboard  {
+font-size:16px	
+}
+.member-dashboard a{
+margin-left:10px;
+}
+.dashboard{
+margin:10px auto auto;
+width:90%;
+background:transparent;
+}
+body
+{
+	background-color: #F4EAD5;
+	background-image: url("/images/backc.jpg");
+	background-size: cover;
+}
+
+.susub{margin-top:30px;text-align: center;}
+
+.capptt{margin-top: 26px;}
+
+.cussbb{width:40%;text-align: center;margin: 0 auto;float: none !important;}
+#captcha_image{
+width: 261px;
+height: 34px;
+	
+}
+
+.dashboard tbody td:nth-child(4) {
+ max-width:800px;
+}

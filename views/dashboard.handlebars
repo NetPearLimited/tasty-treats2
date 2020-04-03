@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>User Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+        <link rel="stylesheet" href="/css/contactusform.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body class="dashboard">
+    <div>
+        <div class="dashboard">
+            <div class="member-dashboard">Welcome <b>{{ name }}</b>, You have successfully logged in! 
+                Click to <a class="btn btn-primary" href="/task/logout" class="logout-button">Logout</a>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Message</th>
+                  <th scope="col">Subscribe</th>
+                  <th scope="col">Date/time</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                  {{#each messages}}
+
+                    <tr>
+                    <th scope="row">{{pos}}</th>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{message}}</td>
+                    <td>{{subscribe}}</td>
+                    <td>{{time}}</td>
+                    </tr>
+
+                  {{/each}}
+
+
+
+              </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

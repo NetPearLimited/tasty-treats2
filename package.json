@@ -1,0 +1,25 @@
+{
+  "name": "realproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "captchagen": "^1.2.0",
+    "config": "^3.3.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.2",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.4.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
