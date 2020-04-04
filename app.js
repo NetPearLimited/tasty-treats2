@@ -31,19 +31,26 @@ app.use(session({
     cookie: { secure: false, maxAge: 600000 }
 }));
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use('/public', express.static(path.join(__dirname, "public")));
 
 app.get('/captcha/captcha.png', require("./routes/captcha").captcha);
 
-app.use("/task", require("./routes/task"));
+app.use("/tasty-treats2", require("./routes/task"));
 
-const listenPort = 3000;
+/*
+app.get("*", (req, res)=>{
+	console.log(req.path);
+	res.end();
+});
+
+*/
+
+const listenPort = 8000;
 
 try {
   listenPort = config.get("PORT");
 } catch (error) {}
 
 app.listen(listenPort, () =>{
-	console.log(`Nodejs App Running at [http://localhost:${listenPort}/task/contactus]`);
-	//open(`http://localhost:${listenPort}/app/login`);
+	console.log(`Nodejs App Running at [http://localhost:${listenPort}/tasty-treats2/contactus]`);
 });

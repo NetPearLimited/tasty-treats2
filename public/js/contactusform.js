@@ -43,7 +43,7 @@ $(function() {
         console.log(postData);
         $.ajax({
             type: "POST",
-            url: '/task/sendmessage',
+            url: '/tasty-treats2/sendmessage',
             data: postData,
             success: after_form_submitted,
             dataType: 'json'

@@ -28,7 +28,7 @@ background:transparent;
 body
 {
 	background-color: #F4EAD5;
-	background-image: url("/images/backc.jpg");
+	background-image: url("/public/images/backc.jpg");
 	background-size: cover;
 }
 
@@ -39,7 +39,7 @@ body
 .cussbb{width:40%;text-align: center;margin: 0 auto;float: none !important;}
 #captcha_image{
 width: 261px;
-height: 34px;
+height: 54px;
 	
 }
 

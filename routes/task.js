@@ -9,7 +9,7 @@ router.get("/contactus", (_req, res) => {
 
 router.get("/login", (req, res) => {
     if(req.session.isLogged==true){
-        return res.redirect('/task/dashboard');
+        return res.redirect('/tasty-treats/dashboard');
     }
 
     res.render("login", { layout: "main" });
@@ -18,7 +18,7 @@ router.get("/login", (req, res) => {
 router.get("/logout", (req, res) => {
 
     req.session.destroy(()=>{
-        res.redirect('/task/login');
+        res.redirect('/tasty-treats2/login');
     });
     
 });
@@ -26,7 +26,7 @@ router.get("/logout", (req, res) => {
 router.get("/dashboard", (req, res) => {
 
     if(req.session.isLogged!=true){
-        return res.redirect('/task/login');
+        return res.redirect('/tasty-treats2/login');
     }
 
     var connection = mysql.createConnection({
@@ -50,7 +50,7 @@ router.get("/dashboard", (req, res) => {
                 email : results[i].email,
                 message : results[i].message,
                 subscribe : results[i].subscribe,
-                time : results[i].time,
+                time : new Date(results[i].time).toLocaleString()
 
             })
         }
@@ -85,7 +85,7 @@ router.post("/login",
     }
 
     req.session.isLogged = true;
-    res.redirect('/task/dashboard');
+    res.redirect('/tasty-treats2/dashboard');
 });
 
 router.post(
@@ -130,17 +130,17 @@ router.post(
        
     connection.connect();
     
-    connection.query('INSERT INTO `form_element`(`id`, `name`, `email`, `message`, `subscribe`, `time`) VALUES ( "", ?, ?, ?, ?, ?)', [
+    connection.query('INSERT INTO `form_element`( `name`, `email`, `message`, `subscribe`, `time`) VALUES ( ?, ?, ?, ?, ?)', [
         name, email, message, subscribe, new Date()
     ], function (error, _results, _fields) {
         
         if (error){
             console.log(error);
 
-            res.json({success: false, errors: [{param: "Error", msg: "Internal Error! Try Again!"}]});
+            return ies.json({success: false, errors: [{param: "Error", msg: "Internal Error! Try Again!"}]});
         } 
 
-        res.json({success: true});
+       return  res.json({success: true});
     });
        
     connection.end();
